@@ -1,11 +1,25 @@
-const express = require('express')
+import App from "./app";
+import { sequelize } from "./config/db";
+import env from "dotenv";
+env.config();
+import fs from "fs";
+const PORT = process.env.PORT || 3000;
 
-const app = express()
+import User  from "./users/user.model";
 
-app.get('/', (_req :any, res :any) => {
-  res.send('Hello World')
-})
 
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000')
-})
+(async () => {
+  try {
+    const connection = await sequelize.authenticate();
+    console.log("✅ MySQL connected");
+    // 2️⃣ Sync models (DEV ONLY)
+    // await sequelize.sync({ alter: true });
+    // console.log("✅ Database synced");
+
+    App.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("❌ MySQL connection failed:", error);
+  }
+})();
