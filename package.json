@@ -4,9 +4,9 @@
   "description": "This is Node file using typescript..",
   "license": "ISC",
   "author": "Aman Dwivedi",
-  "main": "server.js",
+  "main": "server.ts",
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "ES2020",
     "target": "ES2020",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -15,20 +15,23 @@
     "strict": true
   },
   "scripts": {
-    "test": "npm run dev",
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "start": "nodemon dist/server.js"
+    "watch": "tsc-watch --onSuccess \"node dist/server.js\"",
+    "dev": "nodemon server.ts"
   },
   "devDependencies": {
-    "@types/node": "^25.0.8",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "mysql2": "^3.16.1",
     "nodemon": "^3.1.11",
+    "sequelize": "^6.37.7",
     "tsc-watch": "^7.2.0"
   }
 }
