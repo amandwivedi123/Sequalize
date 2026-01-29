@@ -10,6 +10,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["server.ts", "app.ts", "config/**/*", "users/**/*"], 
+  "include": ["server.ts", "app.ts", "config/**/*", "routes/users/**/*"], 
   "exclude": ["node_modules"]
 }

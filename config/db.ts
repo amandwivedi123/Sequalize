@@ -4,18 +4,17 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const sequelize = new Sequelize(
-  process.env.DB_NAME!,        // database
-  process.env.DB_USER!,        // username
-  process.env.DB_PASSWORD!,    // ✅ password (FIXED)
+  process.env.DB_NAME!,
+  process.env.DB_USER!,
+  process.env.DB_PASSWORD!,
   {
-    host: process.env.DB_HOST || "127.0.0.1", // ✅ FIXED
-    dialect: "mysql",                          // ✅ REQUIRED
+    host: process.env.DB_HOST || "127.0.0.1",
+    dialect: "mysql",                       
     port: Number(process.env.DB_PORT) || 3306,
     logging: false,
   }
 );
 
-// Test connection
 (async () => {
   try {
     await sequelize.authenticate();
