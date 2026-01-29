@@ -5,7 +5,7 @@ env.config();
 import fs from "fs";
 const PORT = process.env.PORT || 3000;
 
-import User  from "./users/user.model";
+import User  from "./routes/users/user.model";
 
 
 (async () => {

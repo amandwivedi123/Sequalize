@@ -16,7 +16,7 @@
   },
   "scripts": {
     "watch": "tsc-watch --onSuccess \"node dist/server.js\"",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon src/server.ts"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",

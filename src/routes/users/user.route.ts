@@ -29,7 +29,7 @@ router.get("/getAllUsers" , async (req , res) => {
     try{
         const users = await User.findAll();
         console.log(users , "users")
-        res.status(200).json(users);
+        res.json({message : "Users fetched successfully" , data : users});
     } catch( err : any) {
         res.status(500).json({message : err.message});
     }
