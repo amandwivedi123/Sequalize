@@ -4,15 +4,15 @@ import env from "dotenv";
 env.config();
 import fs from "fs";
 const PORT = process.env.PORT || 3000;
-import {seedUsers} from "./seeders/users-seed";
+
+import User  from "./users/user.model";
 
 
 (async () => {
-    // await seedUsers();
   try {
     const connection = await sequelize.authenticate();
     console.log("✅ MySQL connected");
-
+    // 2️⃣ Sync models (DEV ONLY)
     // await sequelize.sync({ alter: true });
     // console.log("✅ Database synced");
 
